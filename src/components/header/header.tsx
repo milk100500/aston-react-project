@@ -22,7 +22,7 @@ const Header = () => {
                         ) : (
                             <>
                                 <Link className="nav__list-link" to="/login">
-                                    Login
+                                    Loginn
                                 </Link>
                                 <Link className="nav__list-link" to="/register">
                                     Register
