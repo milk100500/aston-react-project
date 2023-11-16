@@ -2,24 +2,35 @@ import { Link } from "react-router-dom";
 
 import { publicPath } from "../../commonVariables";
 
-import styles from "./header.module.scss";
+import "./header.scss";
+import LinksList from "./linksList/linksList";
 
 const Header = () => {
+    const isAuth = false;
     const logoPath = publicPath + "/assets/images/logo.png";
 
     return (
-        <header className={styles.header}>
-            <div className={styles.header__container + " container"}>
+        <header className="header">
+            <div className="header__container container">
                 <Link className="" to="/">
-                    <img
-                        className={styles.header__logo}
-                        src={logoPath}
-                        alt="logo"
-                    />
+                    <img className="header__logo" src={logoPath} alt="logo" />
                 </Link>
-                <Link className={styles.header__pedro} to="/login">
-                    Login
-                </Link>
+                <nav className="header__nav">
+                    <ul className="nav__list">
+                        {isAuth ? (
+                            <LinksList />
+                        ) : (
+                            <>
+                                <Link className="nav__list-link" to="/login">
+                                    Login
+                                </Link>
+                                <Link className="nav__list-link" to="/register">
+                                    Register
+                                </Link>
+                            </>
+                        )}
+                    </ul>
+                </nav>
             </div>
         </header>
     );

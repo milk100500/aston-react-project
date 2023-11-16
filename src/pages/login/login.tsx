@@ -1,16 +1,16 @@
 import Form from "../../components/form/form";
 import { publicPath } from "../../commonVariables";
 
-import styles from "./login.module.scss";
+import "./login.scss";
 
 const Login = () => {
     const videoPath = publicPath + "/assets/video/the_wolf_of_wall_street.mp4";
 
     return (
-        <div className={styles.content}>
-            <div className={styles.video}>
+        <div className="content">
+            <div className="video">
                 <video
-                    className={styles.video__content}
+                    className="video__content"
                     src={videoPath}
                     autoPlay
                     muted

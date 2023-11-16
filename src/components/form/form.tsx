@@ -1,19 +1,15 @@
 import Input from "../input/input";
 
-import styles from "./form.module.scss";
+import "./form.scss";
 
 const Form = () => {
     return (
-        <div className={styles.form} id="form">
+        <div className="form">
             <h1>Login</h1>
-            <span className={styles.form__error}></span>
+            <span className="form__error"></span>
             <Input typeProp={"text"} placeholderProp="Username" />
             <Input typeProp={"password"} placeholderProp="Password" />
-            <input
-                className={styles.form__send_login}
-                type="submit"
-                value="Login"
-            />
+            <input className="form__send_login" type="submit" value="Login" />
         </div>
     );
 };

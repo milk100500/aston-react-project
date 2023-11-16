@@ -17,3 +17,16 @@
         align-items: center;
     }
 }
+
+.nav {
+    &__list {
+        display: flex;
+
+        & * {
+            margin-left: 15px;
+            &:not(:first-child) {
+                margin-left: 15px;
+            }
+        }
+    }
+}

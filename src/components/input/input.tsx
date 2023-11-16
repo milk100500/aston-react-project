@@ -1,6 +1,6 @@
 import { memo } from "react";
 
-import styles from "./input.module.scss";
+import "./input.scss";
 
 interface InputInterface {
     typeProp: string;
@@ -10,7 +10,7 @@ interface InputInterface {
 const Input = memo(({ typeProp, placeholderProp }: InputInterface) => {
     return (
         <input
-            className={styles.input}
+            className="input"
             type={typeProp}
             placeholder={placeholderProp}
         />
