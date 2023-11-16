@@ -1,0 +1,32 @@
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    min-height: 60px;
+    background-color: #000;
+    color: #fff;
+
+    &__logo {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.nav {
+    &__list {
+        display: flex;
+
+        & * {
+            margin-left: 15px;
+            &:not(:first-child) {
+                margin-left: 15px;
+            }
+        }
+    }
+}

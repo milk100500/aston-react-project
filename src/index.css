@@ -1,0 +1,15 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a:active,
+a:hover,
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1080px, 100% - 50px);
+    margin-inline: auto;
+}
