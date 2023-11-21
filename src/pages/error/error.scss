@@ -1,0 +1,16 @@
+.error{
+
+    &__container{
+        display: flex;
+        justify-content: center;
+    }
+
+    &__text{
+        color: #FFF;
+        text-align: center;
+
+        &-heading{  
+            margin-top: 100px;
+        }
+    }
+}

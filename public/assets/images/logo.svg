@@ -1,0 +1,32 @@
+<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_184_22)">
+<rect width="52" height="52" fill="white"/>
+<rect x="4" y="4" width="44" height="44" fill="black"/>
+<rect x="8" y="8" width="36" height="36" fill="white"/>
+<rect x="16" y="16" width="20" height="20" fill="black"/>
+<rect x="40" y="44" width="16" height="4" transform="rotate(-180 40 44)" fill="#0085FF"/>
+<rect x="32" y="36" width="4" height="4" transform="rotate(-180 32 36)" fill="#0085FF"/>
+<rect x="36" y="36" width="4" height="8" transform="rotate(-180 36 36)" fill="#0085FF"/>
+<rect x="44" y="44" width="4" height="16" transform="rotate(-180 44 44)" fill="#0085FF"/>
+<rect x="44" y="12" width="12" height="4" transform="rotate(90 44 12)" fill="#0085FF"/>
+<rect x="36" y="20" width="4" height="4" transform="rotate(90 36 20)" fill="#0085FF"/>
+<rect x="36" y="16" width="4" height="8" transform="rotate(90 36 16)" fill="#0085FF"/>
+<rect x="44" y="8" width="4" height="20" transform="rotate(90 44 8)" fill="#0085FF"/>
+<rect x="8" y="40" width="12" height="4" transform="rotate(-90 8 40)" fill="#0085FF"/>
+<rect x="16" y="32" width="4" height="4" transform="rotate(-90 16 32)" fill="#0085FF"/>
+<rect x="16" y="36" width="4" height="8" transform="rotate(-90 16 36)" fill="#0085FF"/>
+<rect x="8" y="44" width="4" height="16" transform="rotate(-90 8 44)" fill="#0085FF"/>
+<rect x="12" y="8" width="12" height="4" fill="#0085FF"/>
+<rect x="20" y="16" width="4" height="4" fill="#0085FF"/>
+<rect x="16" y="16" width="4" height="8" fill="#0085FF"/>
+<rect x="8" y="8" width="4" height="16" fill="#0085FF"/>
+<rect x="4" y="24" width="44" height="4" fill="black"/>
+<rect x="28" y="12" width="28" height="4" transform="rotate(90 28 12)" fill="white"/>
+<rect x="2" y="2" width="48" height="48" stroke="#0085FF" stroke-width="4"/>
+</g>
+<defs>
+<clipPath id="clip0_184_22">
+<rect width="52" height="52" fill="white"/>
+</clipPath>
+</defs>
+</svg>
