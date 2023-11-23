@@ -2,18 +2,18 @@ import { Link } from "react-router-dom";
 
 import { publicPath } from "../../commonVariables";
 
-import "./header.scss";
 import LinksList from "./linksList/linksList";
+import "./header.scss";
 
 const Header = () => {
     const isAuth = false;
-    const logoPath = publicPath + "/assets/images/logo.png";
+    const logoPath = publicPath + "/assets/images/logo.svg";
 
     return (
         <header className="header">
             <div className="header__container container">
-                <Link className="" to="/">
-                    <img className="header__logo" src={logoPath} alt="logo" />
+                <Link className="header__logo" to="/">
+                    <img className="header__logo-img" src={logoPath} alt="logo" />
                 </Link>
                 <nav className="header__nav">
                     <ul className="nav__list">
@@ -22,7 +22,7 @@ const Header = () => {
                         ) : (
                             <>
                                 <Link className="nav__list-link" to="/login">
-                                    Loginn
+                                    Login
                                 </Link>
                                 <Link className="nav__list-link" to="/register">
                                     Register
