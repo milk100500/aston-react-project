@@ -32,7 +32,6 @@ const Login = () => {
                     setUser({
                         email: user.email,
                         id: user.uid,
-                        token: user.getIdToken(),
                     })
                 );
 

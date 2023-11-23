@@ -32,7 +32,6 @@ const Register = () => {
                     dispatch(
                         setUser({
                             email: user.email,
-                            id: user.uid,
                             token: token,
                         })
                     );
