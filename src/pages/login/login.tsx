@@ -16,7 +16,7 @@ const Login = () => {
     const navigate = useNavigate();
     const dispatch: AppDispatch = useDispatch();
 
-    const videoPath = publicPath + "/assets/video/the_wolf_of_wall_street.mp4";
+    const videoPath = publicPath + "/assets/video/BackgroundVideo.mp4";
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
 

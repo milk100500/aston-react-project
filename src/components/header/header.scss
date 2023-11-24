@@ -1,9 +1,10 @@
 .header {
     position: fixed;
+    top: 0;
     width: 100%;
     z-index: 2;
-    height: 60px;
-    background-color: #000;
+    height: 80px;
+    background-color: rgba(0,0,0,0.5);
     color: #fff;
 
     &__logo {
@@ -15,7 +16,7 @@
             transition: transform 0.2s ease-in-out;
 
             &:hover{
-                transform: scale(1.1);
+                transform: rotate(-10deg);
             }
         }
     }
@@ -31,9 +32,22 @@
 .nav {
     &__list {
         display: flex;
+        align-items: center;
+
+        &-logout{
+            cursor: pointer;
+            background: none;
+        }
 
         & * {
-            margin-left: 15px;
+            color: #FFF;
+            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
+            &:hover{
+                color: #0085FF;
+                background-color: #000;
+            }
+
             &:not(:first-child) {
                 margin-left: 15px;
             }

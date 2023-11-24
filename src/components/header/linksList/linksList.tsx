@@ -1,6 +1,16 @@
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { AppDispatch } from "../../../store";
+import { removeUser } from "../../../store/auth/authSlice";
 
 const LinksList = () => {
+    const dispatch: AppDispatch = useDispatch();
+
+    const handleClick = () => {
+        dispatch(removeUser());
+    };
+      
     return (
         <>
             <Link className="nav__list-link" to="/favorites">
@@ -9,7 +19,7 @@ const LinksList = () => {
             <Link className="nav__list-link" to="/history">
                 History
             </Link>
-            <button className="nav__list-logout">Logout</button>
+            <button className="nav__list-logout" onClick={handleClick}>Logout</button>
         </>
     );
 };

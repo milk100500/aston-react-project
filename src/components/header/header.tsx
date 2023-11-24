@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 
 import { publicPath } from "../../commonVariables";
+import { useAuth } from "../../hooks/useAuth";
 
 import LinksList from "./linksList/linksList";
 import "./header.scss";
 
 const Header = () => {
-    const isAuth = false;
+    const { isAuth } = useAuth();
     const logoPath = publicPath + "/assets/images/logo.svg";
 
     return (
