@@ -1,0 +1,57 @@
+.card{
+    flex: 1 1 25%;
+    background-color: #FFF;
+    color: #000;
+    box-sizing: border-box;
+    margin: 7px;   
+    border: 10px solid #105ea7;
+    border-radius: 5px;
+    
+
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    &__cover{
+
+        &-link{
+            width: 80%;
+            line-height: 0;
+            border: 4px #000 solid;
+            transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+            &:hover{
+                border: 4px #0085FF solid;
+                box-shadow: 0px 0px 10px 2px rgba(0, 133, 255, 1);
+                transform: rotate(-5deg);
+            }
+        }
+
+        &-img{
+            width: 100%;
+        }
+    }
+
+    &__title{
+
+        &-link{
+            margin-top: 10px;
+        }
+
+        &-text{
+            margin: 0;
+            transition: color 0.2s ease-in-out;
+
+            &:hover{
+                color: #0085FF;
+            }
+        }
+    }
+
+    &__author{
+        margin: 10px 0 0 0;
+    }
+}

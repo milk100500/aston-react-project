@@ -12,5 +12,17 @@
         &-heading{  
             margin-top: 100px;
         }
+
+        &-return{
+            display: inline-block;
+            padding: 15px;
+            outline: 2px white solid;
+            transition: color 0.2s ease-in-out, outline 0.2s ease-in-out;
+
+            &:hover{
+                color: #0085FF;
+                outline: 5px #0085FF solid;
+            }
+        }
     }
 }

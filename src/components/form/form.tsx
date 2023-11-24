@@ -28,7 +28,7 @@ const Form = memo(
         return (
             <form className="form">
                 <h1>{formType}</h1>
-                <span className="form__error"></span>
+                {authData.error && <span className="form__error">{authData.error.slice(9)}</span>}
                 <Input typeProp={"text"} placeholderProp="Email" valueProp={email} setValue={setEmail} />
                 <Input typeProp={"password"} placeholderProp="Password" valueProp={password} setValue={setPassword} />
                 <input className="form__send_login" type="submit" value={formType} onClick={handleSubmit}/>
