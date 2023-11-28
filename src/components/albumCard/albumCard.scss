@@ -7,6 +7,7 @@
     margin: 7px;   
     border: 10px solid #105ea7;
     border-radius: 5px;
+    max-width: calc(33.33% - 20px);
 
     &:nth-child(3n+1) {
         flex-grow: 1;
