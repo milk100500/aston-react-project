@@ -1,0 +1,20 @@
+.searchpage{
+    margin-top: 100px;
+
+    &__container{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__result{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__notfound{
+        text-align: center;
+        color: #FFF;
+    }
+    
+}

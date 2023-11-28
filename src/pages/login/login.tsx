@@ -1,4 +1,4 @@
-import { MouseEventHandler, useState } from "react";
+import { MouseEventHandler, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
@@ -10,15 +10,24 @@ import { userData } from "../../store/auth/authSelector";
 import "./login.scss";
 import { AppDispatch } from "../../store";
 import { setError, setUser } from "../../store/auth/authSlice";
+import { useAuth } from "../../hooks/useAuth";
 
 const Login = () => {
-    const authData = useSelector(userData);
+    const videoPath = publicPath + "/assets/video/BackgroundVideo.mp4";
+
+    const { isAuth } = useAuth();
     const navigate = useNavigate();
+    const authData = useSelector(userData);
     const dispatch: AppDispatch = useDispatch();
 
-    const videoPath = publicPath + "/assets/video/BackgroundVideo.mp4";
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
+
+    useEffect(() => {
+        if (isAuth) {
+            navigate("/");
+        }
+    }, [isAuth, navigate]);
 
     const handleSubmit: MouseEventHandler<HTMLInputElement> = (e) => {  
         e.preventDefault();  

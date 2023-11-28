@@ -1,12 +1,16 @@
 .card{
-    flex: 1 1 25%;
+    flex-basis: calc(33.33% - 20px);
+    min-height: 290px;
     background-color: #FFF;
     color: #000;
     box-sizing: border-box;
     margin: 7px;   
     border: 10px solid #105ea7;
     border-radius: 5px;
-    
+
+    &:nth-child(3n+1) {
+        flex-grow: 1;
+    }
 
     &__content{
         display: flex;

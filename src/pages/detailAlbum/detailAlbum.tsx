@@ -18,7 +18,9 @@ const DetailAlbum = () => {
         <div className="detailAlbum">
             <div className="detailAlbum__container container">
                 <div className="detailAlbum__content">
-                    <img src={album.cover} alt="album cover"/>
+                    <div className="detailAlbum__cover">
+                        <img className="detailAlbum__cover-img" src={album.cover} alt="album cover"/>
+                    </div>
                     <h2 className="detailAlbum__title">{album.title}</h2>
                     <h4 className="detailAlbum__author">{album.author}</h4>
                     <h3 className="detailAlbum__year">Album release year: {album.year}</h3>
