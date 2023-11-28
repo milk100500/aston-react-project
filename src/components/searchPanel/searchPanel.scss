@@ -8,7 +8,45 @@
         align-items: center;
     }
 
-    &__inputbox{
+    &__offers{
+        position: absolute;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: #FFF;
+        z-index: 2;
+        color: #000;
+        padding: 10px;
+    }
+
+    &__list{
+
+        &-link{
+            display: inline-block;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        &-item:not(:first-child){
+            margin-top: 10px;
+        }
+
+        &-link:hover{
+            transform: scale(1.1);
+        }
+
+        &-button{
+            margin-top: 10px;
+            background-color: #FFF;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+
+            &:hover{
+                transform:translateX(10px);
+            }
+        }
+    }
+
+    &__form{
+        position: relative;
         width: 100%;
         height: 75%;
 
