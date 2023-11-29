@@ -1,0 +1,29 @@
+.card{
+
+    &__favorite{
+
+        &-box{
+            width: 100%;
+        }
+
+        &-button, &-button:active{
+            margin-top: 15px;
+            padding: 10px 15px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+            cursor: pointer;
+            border: 2px #000 solid;
+
+            &:hover{
+                color: #FFF;
+                background-color: #105ea7;
+            }
+        }
+    }
+}
+
+.active{
+    color: #FFF;
+    background-color: #105ea7;
+}

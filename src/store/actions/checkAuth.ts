@@ -10,8 +10,7 @@ export const checkAuth = createAsyncThunk(
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 return dispatch(setUser({ id: user.uid, email: user.email }));
-            } 
+            }
         });
     },
 );
-  

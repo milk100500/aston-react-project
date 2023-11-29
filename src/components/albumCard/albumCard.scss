@@ -24,7 +24,9 @@
 
         &-link{
             width: 80%;
+            height: 80%;
             line-height: 0;
+
             border: 4px #000 solid;
             transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 

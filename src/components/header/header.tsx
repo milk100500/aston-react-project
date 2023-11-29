@@ -7,8 +7,9 @@ import LinksList from "./linksList/linksList";
 import "./header.scss";
 
 const Header = () => {
-    const { isAuth } = useAuth();
+    const { isAuth, isLoading } = useAuth();
     const logoPath = publicPath + "/assets/images/logo.svg";
+    const gifPath = publicPath + "/assets/images/loading.gif";
 
     return (
         <header className="header">
@@ -18,7 +19,7 @@ const Header = () => {
                 </Link>
                 <nav className="header__nav">
                     <ul className="nav__list">
-                        {isAuth ? (
+                        {isLoading ? isAuth ? (
                             <LinksList />
                         ) : (
                             <>
@@ -29,7 +30,8 @@ const Header = () => {
                                     Register
                                 </Link>
                             </>
-                        )}
+                        ) : <img className="header__loader" src={gifPath} alt="gif loader"/> 
+                        }
                     </ul>
                 </nav>
             </div>

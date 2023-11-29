@@ -21,6 +21,11 @@
         }
     }
 
+    &__loader{
+        width: 30px;
+        height: 30px;
+    }
+
     &__container {
         height: 100%;
         display: flex;

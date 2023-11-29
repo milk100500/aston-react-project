@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import { Album } from "../../api/musicApi";
-import FavoriteButton from "../favoritesButton/favoritesButton";
+import FavoriteButton from "../favoriteButton/favoriteButton";
 import { useGetFavoritesByIdQuery, useAddInFavoritesMutation, useRemoveFromFavoritesMutation } from "../../api/favoritesApi";
 import { userData } from "../../store/auth/authSelector";
 

@@ -1,7 +1,8 @@
 import { memo } from "react";
 
 import { ResponseParams } from "../../api/favoritesApi";
-import { Loader } from "../loader/loader";
+
+import "./favoriteButton.scss";
 
 interface FavoriteButtonInterface {
   favoriteAlbumProp: ResponseParams | undefined | null;
@@ -16,16 +17,15 @@ const FavoriteButton = memo(
         changeStatusFavorites,
     }: FavoriteButtonInterface) => {
         return (
-            <div className="card__favorite" onClick={changeStatusFavorites}>
+            <div className="card__favorite-box" onClick={changeStatusFavorites}>
+
                 {isFetching ? (
-                    <span>Секунду</span>
+                    <button className="card__favorite-button active">Секунду...</button>
                 ) : (
                     <>
-                        {favoriteAlbumProp ? (
-                            <button>Удалить из избранного</button>
-                        ) : (
-                            <button>Добавить в избранное</button>
-                        )}
+                        {<button className={"card__favorite-button " + (favoriteAlbumProp ? "active" : "")}>
+                            {favoriteAlbumProp ? "Удалить из избранного" : "Добавить в избранное"}
+                        </button>}
                     </>
                 )}
             </div>

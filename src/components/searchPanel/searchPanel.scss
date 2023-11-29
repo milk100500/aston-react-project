@@ -66,5 +66,20 @@
             font-size: 25px;
             transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
+
+        &-button{
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: scale 0.2s ease-in-out;
+
+            &:hover{
+                scale: 1.1;
+            }
+        }
     }
 }

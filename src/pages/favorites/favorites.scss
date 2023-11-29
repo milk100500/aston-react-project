@@ -1,4 +1,10 @@
 .favorites{
+    margin-top: 100px;
+    color: #FFF;
+
+    &__title{
+        text-align: center;
+    }
 
     &__container{
         display: flex;
