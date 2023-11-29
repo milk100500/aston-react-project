@@ -6,12 +6,14 @@ import { userData } from "../../store/auth/authSelector";
 import { searchData } from "../../store/search/searchSelector";
 import { useDebounce } from "../../hooks/useDebounce";
 
-import "./searchPanel.scss";
 import { AppDispatch } from "../../store";
 import { setSearchValue } from "../../store/search/searchSlice";
 import { useAddInHistoryMutation } from "../../api/historyApi";
+import { publicPath } from "../../commonVariables";
 
 import SearchList from "./searchList/searchList";
+
+import "./searchPanel.scss";
 
 const SearchPanel = () => {
     const dispatch: AppDispatch = useDispatch();
@@ -57,6 +59,7 @@ const SearchPanel = () => {
                         onBlur={() => setTimeout(()=>setFocus(false), 500)}
                         type="text"
                         placeholder="Search"/>
+                    <img className="search__form-button" onClick={handleSubmit} src={publicPath + "assets/images/search.svg"} alt="search button"/>
                     {isFocus && debouncedSearch ? 
                         <SearchList debouncedSearch={debouncedSearch} handleSubmit={handleSubmit} /> 
                         : null}

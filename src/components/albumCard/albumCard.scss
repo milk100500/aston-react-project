@@ -7,6 +7,7 @@
     margin: 7px;   
     border: 10px solid #105ea7;
     border-radius: 5px;
+    max-width: calc(33.33% - 20px);
 
     &:nth-child(3n+1) {
         flex-grow: 1;
@@ -23,7 +24,9 @@
 
         &-link{
             width: 80%;
+            height: 80%;
             line-height: 0;
+
             border: 4px #000 solid;
             transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 

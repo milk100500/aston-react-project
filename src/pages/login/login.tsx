@@ -41,6 +41,7 @@ const Login = () => {
                     setUser({
                         email: user.email,
                         id: user.uid,
+                        lastLogin: new Date().toTimeString()
                     })
                 );
 
