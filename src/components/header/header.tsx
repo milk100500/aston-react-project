@@ -14,6 +14,7 @@ const Header = () => {
     const { isAuth, isLoading } = useAuth();
     const logoPath = publicPath + "/assets/images/logo.svg";
     const gifPath = publicPath + "/assets/images/loading.gif";
+    const arrowPath = publicPath + "/assets/images/arrow.svg";
     const { collapsed, switchCollapse } = useContext(CollapseContext);
 
     return (
@@ -26,7 +27,7 @@ const Header = () => {
                     <img className="header__nav-arrow" 
                         onClick={switchCollapse} 
                         style={collapsed ? { transform: "rotateY(0deg)" } : { transform: "rotateY(180deg)" }}
-                        src={publicPath + "assets/images/arrow.svg"} 
+                        src={arrowPath} 
                         alt="arrow nav"
                     />
                     <ul className="nav__list" style={collapsed ? { display: "flex" } : { display: "none" }}>
