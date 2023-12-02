@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import React, { createContext, useState, useMemo } from "react";
 
 interface CollapseContextInterface {
   collapsed: boolean;
@@ -14,13 +14,10 @@ const CollapseContextProvider = ({ children }: { children: React.ReactNode }) =>
     const [collapsed, setCollapsed] = useState(true);
     const switchCollapse = () => setCollapsed((prev) => !prev);
 
+    const value = useMemo(() => ({ collapsed, switchCollapse }), [collapsed]);
+
     return (
-        <CollapseContext.Provider
-            value={{
-                collapsed,
-                switchCollapse,
-            }}
-        >
+        <CollapseContext.Provider value={value}>
             {children}
         </CollapseContext.Provider>
     );
