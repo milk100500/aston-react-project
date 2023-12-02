@@ -28,7 +28,7 @@ const DetailAlbum = () => {
             return;
         }
         if (favoriteAlbum) {
-            await removeFavorites({ id: id, uId });
+            await removeFavorites({ id: id, userId: uId });
         } else {
             await addFavorites({ albumProp: album, userId: uId });
         }
