@@ -36,3 +36,9 @@
 
 - Использован TypeScript.
 - Использование Firebase для учетных записей пользователей и их Избранного и Истории поиска, применение: [auth](https://github.com/milk100500/aston-react-project/blob/main/src/store/actions/checkAuth.ts), [favoritesApi](https://github.com/milk100500/aston-react-project/blob/main/src/api/favoritesApi.ts), [historyApi](https://github.com/milk100500/aston-react-project/blob/main/src/api/historyApi.ts).
+
+## API
+
+В своем проекте я использовал mokapi для для получения данных о музыкальных альбомах.
+
+Mokapi - это инструмент для создания фейкового (mock) API для разработки и тестирования приложений. Он позволяет эмулировать серверное взаимодействие и предоставлять тестовые данные через API-эндпоинты.
