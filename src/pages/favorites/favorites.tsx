@@ -1,15 +1,15 @@
 import { useSelector } from "react-redux";
 
 import { useGetFavoritesQuery } from "../../api/favoritesApi";
-import { userData } from "../../store/auth/authSelector";
+import { userId } from "../../store/auth/authSelector";
 import { Loader } from "../../components/loader/loader";
 import AlbumCard from "../../components/albumCard/albumCard";
 
 import "./favorites.scss";
 
 const Favorites = () => {
-    const userId = useSelector(userData).id;
-    const { data = [], isFetching, isLoading } = useGetFavoritesQuery(userId);
+    const uId = useSelector(userId);
+    const { data = [], isFetching, isLoading } = useGetFavoritesQuery(uId);
 
     if (isFetching || isLoading) {
         return <Loader />;

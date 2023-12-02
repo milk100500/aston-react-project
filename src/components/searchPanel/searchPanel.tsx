@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-import { userData } from "../../store/auth/authSelector";
+import { userId } from "../../store/auth/authSelector";
 import { searchData } from "../../store/search/searchSelector";
 import { useDebounce } from "../../hooks/useDebounce";
 
@@ -20,7 +20,7 @@ const SearchPanel = () => {
     const navigate = useNavigate();
 
     const searchValue = useSelector(searchData);
-    const userId = useSelector(userData).id;
+    const id = useSelector(userId);
     const [addInHistory] = useAddInHistoryMutation();
     const debouncedSearch = useDebounce(searchValue.search, 500);
 
@@ -37,10 +37,10 @@ const SearchPanel = () => {
     
         navigate(`/search?searchquery=${debouncedSearch}`);
     
-        if (userId) {
+        if (id) {
             await addInHistory({
                 searchUrl: window.location.href,
-                userId: userId,
+                userId: id,
                 search: debouncedSearch,
             });
         }

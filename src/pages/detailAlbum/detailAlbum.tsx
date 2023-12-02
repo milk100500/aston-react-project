@@ -6,31 +6,31 @@ import { Loader } from "../../components/loader/loader";
 
 import { useGetFavoritesByIdQuery, useAddInFavoritesMutation, useRemoveFromFavoritesMutation } from "../../api/favoritesApi";
 import FavoriteButton from "../../components/favoriteButton/favoriteButton";
-import { userData } from "../../store/auth/authSelector";
+import { userId } from "../../store/auth/authSelector";
 
 import "./detailAlbum.scss";
 
 const DetailAlbum = () => {
     const { id } = useParams();
-    const userId = useSelector(userData).id;
+    const uId = useSelector(userId);
     const { data: album, isLoading } = useGetAlbumByIdQuery(String(id));
     const { data: favoriteAlbum, isFetching } = useGetFavoritesByIdQuery({
         id: id ?? "",
-        userId,
+        userId: uId,
     });
     const navigate = useNavigate();
     const [addFavorites] = useAddInFavoritesMutation();
     const [removeFavorites] = useRemoveFromFavoritesMutation();
 
     const changeStateFavorites = async (e: React.MouseEvent) => {
-        if (!userId) {
+        if (!uId) {
             navigate("/login");
             return;
         }
         if (favoriteAlbum) {
-            await removeFavorites({ id: id, userId });
+            await removeFavorites({ id: id, userId: uId });
         } else {
-            await addFavorites({ albumProp: album, userId });
+            await addFavorites({ albumProp: album, userId: uId });
         }
     };
 

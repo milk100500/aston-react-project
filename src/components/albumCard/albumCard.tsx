@@ -4,30 +4,30 @@ import { useSelector } from "react-redux";
 import { Album } from "../../api/musicApi";
 import FavoriteButton from "../favoriteButton/favoriteButton";
 import { useGetFavoritesByIdQuery, useAddInFavoritesMutation, useRemoveFromFavoritesMutation } from "../../api/favoritesApi";
-import { userData } from "../../store/auth/authSelector";
+import { userId } from "../../store/auth/authSelector";
 
 import "./albumCard.scss";
 
 const AlbumCard = ({albumProp} : Props) =>{
     const navigate = useNavigate();
-    const userId = useSelector(userData).id;
+    const uId = useSelector(userId);
     const [addFavorites] = useAddInFavoritesMutation();
     const [removeFavorites] = useRemoveFromFavoritesMutation();
 
     const { data: favoriteAlbum, isFetching } = useGetFavoritesByIdQuery({
         id: albumProp.id,
-        userId,
+        userId: uId,
     });
     
     const changeStateFavorites = async (e: React.MouseEvent) => {
-        if (!userId) {
+        if (!uId) {
             navigate("/login");
             return;
         }
         if (favoriteAlbum) {
-            await removeFavorites({ id: albumProp.id, userId });
+            await removeFavorites({ id: albumProp.id, userId: uId });
         } else {
-            await addFavorites({ albumProp, userId });
+            await addFavorites({ albumProp, userId: uId });
         }
     };
     
