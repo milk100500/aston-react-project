@@ -3,13 +3,13 @@ import { useSelector } from "react-redux";
 import HistoryItem from "../../components/historyItem/historyItem";
 import { Loader } from "../../components/loader/loader";
 import { useGetHistoryQuery } from "../../api/historyApi";
-import { userData } from "../../store/auth/authSelector";
+import { userId } from "../../store/auth/authSelector";
 
 import "./history.scss";
 
 const History = () => {
-    const userId = useSelector(userData).id;
-    const { data, isFetching, isLoading } = useGetHistoryQuery(userId);
+    const uId = useSelector(userId);
+    const { data, isFetching, isLoading } = useGetHistoryQuery(uId);
 
     if (isFetching || isLoading) {
         return <Loader />;
