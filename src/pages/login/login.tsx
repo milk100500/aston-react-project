@@ -40,8 +40,7 @@ const Login = () => {
                 dispatch(
                     setUser({
                         email: user.email,
-                        id: user.uid,
-                        lastLogin: new Date().toTimeString()
+                        id: user.uid
                     })
                 );
 

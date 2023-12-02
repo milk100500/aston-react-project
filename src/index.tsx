@@ -4,17 +4,21 @@ import { Provider } from "react-redux";
 import "./firebase";
 
 import App from "./App";
+import { store } from "./store";
+import { CollapseContextProvider } from "./context/collapseProvider";
+
 import "./index.css";
 import "./normalize.scss";
-import { store } from "./store";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement
 );
 root.render(
     <React.StrictMode>
-        <Provider store={store}>
-            <App />
-        </Provider>
+        <CollapseContextProvider>
+            <Provider store={store}>
+                <App />
+            </Provider>
+        </CollapseContextProvider>
     </React.StrictMode>
 );
