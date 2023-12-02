@@ -36,14 +36,14 @@ const Register = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                user.getIdToken().then((token) => {
-                    dispatch(
-                        setUser({
-                            email: user.email,
-                            token: token,
-                        })
-                    );
-                });
+                
+                dispatch(
+                    setUser({
+                        email: user.email,
+                        id: user.uid
+                    })
+                );
+
                 navigate("/");
             })
             .catch((error) => {    

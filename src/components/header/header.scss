@@ -7,6 +7,21 @@
     background-color: rgba(0,0,0,0.5);
     color: #fff;
 
+    &__nav{
+        display: flex;
+
+        &-arrow{
+            width: 30px;
+            height: 30px;
+            transition: scale 0.2s ease-in-out;
+            cursor: pointer;
+
+            &:hover{
+                scale: 1.2;
+            }
+        }
+    }
+
     &__logo {
         line-height: 0;
         
@@ -38,6 +53,7 @@
     &__list {
         display: flex;
         align-items: center;
+        margin-left: 15px;
 
         &-logout{
             cursor: pointer;
