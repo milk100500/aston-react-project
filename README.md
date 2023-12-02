@@ -1,46 +1,38 @@
-# Getting Started with Create React App
+# aston-react-project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Реализовано приложение для просмотра и сохранения музыкальных альбомов
 
-## Available Scripts
+Реализованы следующие требования к функциональности:
 
-In the project directory, you can run:
+## 1 уровень (необходимый минимум)
 
-### `npm start`
+### React
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Функциональные компоненты c хуками в приоритете над классовыми: [components](https://github.com/milk100500/aston-react-project/tree/main/src/components), [pages](https://github.com/milk100500/aston-react-project/tree/main/src/pages).
+- Есть разделение на умные и глупые компоненты
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  Умные: [SearchPanel](https://github.com/milk100500/aston-react-project/blob/main/src/components/searchPanel/searchPanel.tsx), [AlbumCard](https://github.com/milk100500/aston-react-project/blob/main/src/components/albumCard/albumCard.tsx), и т.д.
 
-### `npm test`
+  Глупые: [Input](https://github.com/milk100500/aston-react-project/blob/main/src/components/input/input.tsx), [FavoriteButton](https://github.com/milk100500/aston-react-project/blob/main/src/components/favoriteButton/favoriteButton.tsx), и т.д.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Есть рендеринг списков: [Favorites](https://github.com/milk100500/aston-react-project/blob/main/src/pages/favorites/favorites.tsx), [History](https://github.com/milk100500/aston-react-project/blob/main/src/pages/history/history.tsx), и т.д.
+- Реализована хотя бы одна форма: [Form](https://github.com/milk100500/aston-react-project/blob/main/src/components/form/form.tsx).
+- Есть применение Контекст API: [CollapseProvider](https://github.com/milk100500/aston-react-project/blob/main/src/context/collapseProvider.tsx) в [index.tsx](https://github.com/milk100500/aston-react-project/blob/main/src/index.tsx).
+- Есть применение предохранителя: [ErrorBoundary](https://github.com/milk100500/aston-react-project/blob/main/src/components/errorBoundary/errorBoundary.tsx) в [Main](https://github.com/milk100500/aston-react-project/blob/main/src/pages/main/main.tsx).
+- Есть хотя бы один кастомный хук: [useDebounce](https://github.com/milk100500/aston-react-project/blob/main/src/hooks/useDebounce.ts), [useAuth](https://github.com/milk100500/aston-react-project/blob/main/src/hooks/useAuth.ts).
+- Хотя бы несколько компонентов используют PropTypes: [AlbumCard](https://github.com/milk100500/aston-react-project/blob/main/src/components/albumCard/albumCard.tsx), [HistoryItem](https://github.com/milk100500/aston-react-project/blob/main/src/components/historyItem/historyItem.tsx).
+- Поиск не должен триггерить много запросов к серверу: [useDebounce](https://github.com/milk100500/aston-react-project/blob/main/src/hooks/useDebounce.ts), использован в компоненте [SearchPanel](https://github.com/milk100500/aston-react-project/blob/main/src/components/searchPanel/searchPanel.tsx).
+- Есть применение lazy + Suspense: [Main](https://github.com/milk100500/aston-react-project/blob/main/src/pages/main/main.tsx).
 
-### `npm run build`
+### Redux
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Используем Modern Redux with Redux Toolkit: [store](https://github.com/milk100500/aston-react-project/blob/main/src/store/index.ts).
+- Используем слайсы: [authSlice](https://github.com/milk100500/aston-react-project/blob/main/src/store/auth/authSlice.ts), [searchSlice](https://github.com/milk100500/aston-react-project/blob/main/src/store/search/searchSlice.ts).
+- Есть хотя бы одна кастомная мидлвара: [logoutMiddleware](https://github.com/milk100500/aston-react-project/blob/main/src/store/middleware/logoutMiddleware.ts).
+- Используется RTK Query: [favoritesApi](https://github.com/milk100500/aston-react-project/blob/main/src/api/favoritesApi.ts), [historyApi](https://github.com/milk100500/aston-react-project/blob/main/src/api/historyApi.ts), [musicApi](https://github.com/milk100500/aston-react-project/blob/main/src/api/musicApi.ts).
+- Используется Transforming Responses: [favoritesApi](https://github.com/milk100500/aston-react-project/blob/main/src/api/favoritesApi.ts).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 2 уровень
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Использован TypeScript.
+- Использование Firebase для учетных записей пользователей и их Избранного и Истории поиска, применение: [auth](https://github.com/milk100500/aston-react-project/blob/main/src/store/actions/checkAuth.ts), [favoritesApi](https://github.com/milk100500/aston-react-project/blob/main/src/api/favoritesApi.ts), [historyApi](https://github.com/milk100500/aston-react-project/blob/main/src/api/historyApi.ts).
